@@ -1,0 +1,17 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>PekaHalloween</title><link rel="stylesheet" href="./src/style.css">
+<script>
+window.__showErr=function(m){var d=document.getElementById('err');if(!d){d=document.createElement('div');d.id='err';document.documentElement.appendChild(d);}d.style.cssText='position:fixed;inset:0;z-index:9999;background:#b00;color:#fff;font:14px monospace;padding:16px;white-space:pre-wrap;overflow:auto';d.textContent='Error al iniciar PekaHalloween:\n'+m;};
+window.addEventListener('error',function(e){if(!window.__started)window.__showErr((e.message||e)+'\n'+(e.filename||'')+':'+(e.lineno||''));});
+window.addEventListener('unhandledrejection',function(e){if(!window.__started)window.__showErr(String(e.reason));});
+setTimeout(function(){if(!window.__started)window.__showErr('El juego no arrancó (navegador antiguo o WebGL no disponible).');},15000);
+</script></head><body>
+<div id="hud" class="hidden"><div id="hp"></div><div id="score">0</div><div id="loot">🍬 0</div><div id="bombs">🎃 3</div><button id="pauseBtn">❚❚</button><div id="bossbar" class="hidden"><span>REY CALABAZA</span><div><i></i></div></div></div>
+<div id="menu" class="screen"><h1>Peka<span>Halloween</span></h1><p>¡Los monstruos quieren robar el botín de Halloween! Defiéndelo a caramelazos.</p><button id="play">JUGAR</button><button id="cont" class="hidden">Continuar</button><div id="lvsel"><button data-n="1">Nivel 1</button><button data-n="2">Nivel 2</button><button data-n="3">Nivel 3</button></div><button id="snd">Sonido: SÍ</button><small>Teclado: ←→ / A D mover · ↑ / W apuntar arriba · Espacio/K saltar · J/Z disparar · L/X bomba · P/Esc pausa — Mando y táctil compatibles</small></div>
+<div id="pause" class="screen hidden"><h2>Pausa</h2><button id="resume">Seguir</button><button id="quit">Menú</button></div>
+<div id="over" class="screen hidden"><h2 id="overT"></h2><p id="overP"></p><button id="again">Otra vez</button><button id="toMenu">Menú</button></div>
+<div id="trans" class="screen hidden"><h2 id="transT"></h2><h3 id="transN"></h3><p id="transP"></p><button id="next">¡Adelante!</button></div>
+<div id="rotHint" class="hidden">📱↻ Mejor en horizontal <b>✕</b></div>
+<div id="touch" class="hidden"><div id="stick"><div id="knob"></div></div><div id="tbtns"><button id="tB">🎃</button><button id="tJ">⤒</button><button id="tF">🍬</button></div></div>
+<script type="module" src="./src/main.js"></script></body></html>
